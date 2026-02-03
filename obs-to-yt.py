@@ -23,7 +23,7 @@ TOKEN_CACHE_FILE = 'token.pickle'
 API_BASE = "http://localhost:3001"
 
 POLL_SECONDS = 10
-UPLOAD_PRIVACY = 'unlisted'
+UPLOAD_PRIVACY = 'private'
 UPLOAD_DESCRIPTION = ''
 UPLOAD_CATEGORY_ID = '22'
 
