@@ -16,12 +16,11 @@ export default function Videos() {
     return (
         <div className="app">
             <div className="list">
-                <h2 className="recordings"></h2>
                 {videos.map(v => (
                     <div className="video-item" key={v.id}
                         onClick={() => setSelected(v)}>
-                        <div className="video-title"></div>
-                        <div className="video-date">{new Date(v.createdAt).toLocaleString()}</div>
+                        <div className="video-title-small">{v.title}</div>
+                        <div className="video-date-small">{new Date(v.createdAt).toLocaleString()}</div>
                     </div>
                 ))}
             </div>
@@ -29,8 +28,9 @@ export default function Videos() {
             <div className="preview">
                 {selected ? (
                     <>
-                        <div className="span">
-                            <h2 className="video-title">{selected.title}</h2>
+                        <div className="item-header-items">
+                            <h2 className="video-title-big">{selected.title}</h2>
+                            <p className="video-date-big">{new Date(selected.createdAt).toLocaleString()}</p>
                             <button className="close-display" onClick={() => setSelected(null)}>X</button>
                         </div>
                         <video
@@ -40,7 +40,7 @@ export default function Videos() {
                         />
                     </>
                 ) : (
-                    <div>select video</div>
+                    <div className="select-video">Select a video to perform actions...</div>
                 )}
             </div>
         </div>
